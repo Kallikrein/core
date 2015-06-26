@@ -1,0 +1,17 @@
+
+node_modules
+bower_components
+
+# generic temporary files
+.tmp
+
+# Npm debug logs
+npm-debug.log
+
+# vim temporary files
+.swp
+
+# unwanted system files
+.DS_Store
+_DS_Store
+Thumbs.db

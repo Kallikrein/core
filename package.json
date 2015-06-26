@@ -1,0 +1,27 @@
+{
+  "name": "SparterApp-Core",
+  "version": "0.0.1",
+  "description": "Core of the SparterApp",
+  "main": "public/index.html",
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sparted/New-Core.git"
+  },
+  "authors": [
+    "Joachim Westphal <joachim@sparted.com>"
+  ],
+  "homepage": "http://www.sparted.com",
+  "dependencies": {
+    "mocha": "^2.2.5"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-express": "^1.4.1",
+    "grunt-open": "^0.2.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "load-grunt-tasks": "^3.2.0"
+  }
+}

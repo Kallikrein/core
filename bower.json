@@ -1,0 +1,27 @@
+{
+  "name": "SparterApp-Core",
+  "version": "0.0.1",
+  "homepage": "http://www.sparted.com",
+  "authors": [
+    "Joachim Westphal <joachim@sparted.com>"
+  ],
+  "description": "Core of the SparterApp",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.18",
+    "mithril": "~0.2.0",
+    "lib": "http://github.com/Elindorath/lib.git#0.0.1",
+    "bluebird": "~2.9.30"
+  },
+  "resolutions": {
+    "lib": "0.0.1"
+  }
+}
