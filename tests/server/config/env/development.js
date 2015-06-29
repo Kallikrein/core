@@ -20,5 +20,14 @@ module.exports = {
   // models: {
   //   connection: 'someMongodbServer'
   // }
+  models: {
+    connection : 'localDiskDb',
+    migrate : 'drop'
+  },
+  cors : {
+  	allRoutes: true,
+  	origin : '*',
+  	methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD'
+  }
 
 };
