@@ -34,7 +34,9 @@
 
 		function login() {
 			return post('http://mp.sparted.com/login')
-				.then(JSON.stringify)
+				.then(function(res) {
+					return JSON.parse(res).token;
+				})
 				.then(_token)
 				.catch(function(err) {
 					console.log(err);
