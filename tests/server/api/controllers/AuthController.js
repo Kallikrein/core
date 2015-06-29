@@ -14,7 +14,7 @@ module.exports = {
    */
   login: function (req, res) {
     return res.json({
-      todo: 'login() is not implemented yet!'
+      token: 'simplequote'
     });
   },
 

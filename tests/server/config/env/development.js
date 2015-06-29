@@ -26,6 +26,7 @@ module.exports = {
   },
   cors : {
   	allRoutes: true,
+  	headers: 'X-token',
   	origin : '*',
   	methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD'
   }

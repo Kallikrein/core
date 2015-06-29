@@ -8,6 +8,10 @@
 module.exports = function(req, res, next) {
 
   // TODO
+  console.log(req.headers);
+  if (req.headers['x-token'] !== "login() is not implemented yet!")
+  	return res.forbidden('invalid token');
+
   return next();
 
 };

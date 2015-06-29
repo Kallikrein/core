@@ -38,7 +38,11 @@ module.exports.routes = {
   '/login': {
     controller: 'auth',
     action: 'login'
-  }
+  }//,
+  // 'GET /users': {
+  //   policy: 'hasToken',
+  //   blueprint: 'users'
+  //}
 
   /***************************************************************************
   *                                                                          *
