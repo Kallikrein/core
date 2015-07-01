@@ -61,7 +61,11 @@
 						m('button.button', {onclick: c.request}, 'Send request'),
 						m('button.button', {onclick: c.display}, 'Display'),
 						m('button.button', {onclick: c.clearAll}, 'Clear all'),
-						m('', c.chrono())
+						m('', c.chrono()),
+						m('a', {
+							href:   '/data',
+							config: m.route
+						}, 'Data page -->')
 					])
 				]),
 				m('footer.page-footer', 'v0.0.1 dev')

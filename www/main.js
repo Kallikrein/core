@@ -12,11 +12,12 @@
 	require([
 		'm',
 		'bluebird',
-		'components/pageComponent',
+		'components/storageComponent',
+		'components/dataComponent',
 		'services/networkService'
 	], main);
 
-	function main(m, Promise, page, network) {
+	function main(m, Promise, storagePage, dataPage, network) {
 
 		Promise.longStackTraces();
 
@@ -26,8 +27,9 @@
 
 		m.route.mode = 'hash';
 
-		m.route(document.body, '/', {
-			'/': page
+		m.route(document.body, '/storage', {
+			'/storage': storagePage,
+			'/data':    dataPage
 		});
 
 	}

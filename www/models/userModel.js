@@ -9,14 +9,37 @@
 
 		var User = {
 			attributes: {
-				mail: {
-					required: true
+				email: {
+					required:  true,
+					isAllowed: function() {},
+					isValid:   function() {}
 				},
 				password: {
 					required: true
 				},
-				name: {
-					type: 'string'
+				firstname: {
+					type:      'string',
+					isAllowed: function(value) {
+						var chars = ['@'];
+
+						for (var i = 0, len = chars.length; i < len; i++) {
+							if (value.indexOf(chars[i]) >= 0)
+								return false;
+						}
+
+						return true;
+					},
+					isValid: function(value) {
+						console.log(value, value == 'yolo');
+						return value == 'yolo';
+					}
+				},
+				lastname: {
+					type:    'string',
+					isValid: function(value) {
+						console.log(value == 'yolo');
+						return value == 'yolo';
+					}
 				}
 			},
 			me: function() {}
@@ -27,3 +50,9 @@
 	});
 
 })();
+
+var tesst = {
+	ouhd:      '',
+	ougohljqh: '',
+	cbj:       ''
+};
