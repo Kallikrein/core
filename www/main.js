@@ -4,7 +4,8 @@
 	require.config({
 		paths: {
 			m:        'bower_components/mithril/mithril.min',
-			bluebird: 'bower_components/bluebird/js/browser/bluebird.min'
+			bluebird: 'bower_components/bluebird/js/browser/bluebird.min',
+			utils:    'lib/utils'
 		}
 	});
 
