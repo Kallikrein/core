@@ -17,13 +17,13 @@
 				save: _save
 			};
 
-			wrapper.obj = localStorage.getItem(key);
+			wrapper.obj = JSON.parse(localStorage.getItem(key));
 
 			return wrapper;
 		}
 
 		function _save() {
-			localStorage.setItem(this.key, this.obj);
+			localStorage.setItem(this.key, JSON.stringify(this.obj));
 		}
 	});
 
