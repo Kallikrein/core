@@ -30,7 +30,14 @@
 		}
 
 		function _save() {
-			localStorage.setItem(this.key, JSON.stringify(this.obj));
+
+			var self = this;
+
+			Object.keys(self.obj).map(function (item) {
+				self.obj[item] = self.obj[item]();
+			});
+
+			localStorage.setItem(self.key, JSON.stringify(self.obj));
 		}
 	});
 
