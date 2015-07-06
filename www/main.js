@@ -11,17 +11,19 @@
 
 	require([
 		'm',
-		'components/pageComponent'
+		'components/pageComponent',
+		'components/testComponent'
 	], main);
 
-	function main(m, page) {
+	function main(m, page, test) {
 
 		document.addEventListener('deviceready', onDeviceReady);
 
 		m.route.mode = 'hash';
 
-		m.route(document.body, '/', {
-			'/': page
+		m.route(document.body, '/tests/', {
+			'/': page,
+			'/tests/': test
 		});
 
 	}
