@@ -10,6 +10,34 @@
 
 		var component = {};
 
+		component.vm = (function() {
+			var vm = {};
+
+			vm.init = function() {
+
+			};
+
+			vm.testSave = function () {
+				var toto = new storage.getKey('toto');
+
+				var obj = toto.obj;
+
+				console.log(obj);
+
+				console.log('test', obj.newKey());
+
+				obj.newKey(['test']);
+
+				console.log('test 2', obj.newKey());
+
+				toto.save();
+
+				console.log(toto);
+			};
+
+			return vm;
+		})();
+
 		component.controller = function() {
 			var self = this;
 
@@ -52,6 +80,9 @@
 		};
 
 		component.view = function(c) {
+
+			var vm = component.vm;
+
 			return m('.page', [
 				m('header.page-header', 'Kernel test'),
 				m('section.page-section', [
@@ -61,6 +92,7 @@
 						m('button.button', {onclick: c.request}, 'Send request'),
 						m('button.button', {onclick: c.display}, 'Display'),
 						m('button.button', {onclick: c.clearAll}, 'Clear all'),
+						m('button.button', {onclick: vm.testSave}, 'Test'),
 						m('', c.chrono())
 					])
 				]),
