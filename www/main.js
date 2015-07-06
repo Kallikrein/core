@@ -10,12 +10,18 @@
 
 	require([
 		'm',
-		'components/pageComponent'
+		'bluebird',
+		'components/pageComponent',
+		'services/networkService'
 	], main);
 
-	function main(m, page) {
+	function main(m, Promise, page, network) {
+
+		Promise.longStackTraces();
 
 		document.addEventListener('deviceready', onDeviceReady);
+
+		network.init().then(console.log.bind(console));
 
 		m.route.mode = 'hash';
 
