@@ -8,44 +8,65 @@
 	], function(m, Promise, classFactory) {
 
 		var User = {
+			prefix: 'USER',
 			attributes: {
 				email: {
-					required:  true,
-					isAllowed: function() {},
-					isValid:   function() {}
+					required: true
 				},
 				password: {
 					required: true
 				},
 				firstname: {
-					type:      'string',
-					isAllowed: function(value) {
-						var chars = ['@'];
-
-						for (var i = 0, len = chars.length; i < len; i++) {
-							if (value.indexOf(chars[i]) >= 0)
-								return false;
-						}
-
-						return true;
-					},
-					isValid: function(value) {
-						console.log(value, value == 'yolo');
-						return value == 'yolo';
-					}
+					type: 'string'
 				},
 				lastname: {
-					type:    'string',
-					isValid: function(value) {
-						console.log(value == 'yolo');
-						return value == 'yolo';
-					}
+					type: 'string'
+				},
+				friendList: {
+					type: 'collection',
+					via:  'friend'
+				},
+				groups: {
+					type: 'array',
+					via:  ''
 				}
 			},
 			me: function() {}
 		};
 
 		return classFactory(User);
+
+		// var toto = new User('toto');
+
+		// // toto.populate('friends');
+
+		// User.create({firstname : 'tata'})
+		// .then(function (record) {
+		// 	record.lastname('toto');
+		// 	return record.save()
+		// })
+
+		// User.find({lastname : 'toto'})
+		// .then(function (record) {
+		// 	console.log(record.friendList);
+		// 	// [1, 2]
+		// });
+
+		// var array = [];
+
+		// find(id) {
+		// 	var array = JSON.parse('ID' + 'USER');
+		// 	for each in array
+		// }
+
+		// User.find({lastname : 'toto'})
+		// .populateAll()
+		// .then(function (record) {
+		// 	console.log(record.friendList);
+		// 	// [{}, {}]
+		// 	record.friendList.add(42)
+		// 	record.save()
+		// })
 
 	});
 
