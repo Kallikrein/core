@@ -10,17 +10,19 @@
 
 	require([
 		'm',
-		'components/pageComponent'
+		'components/pageComponent',
+		'components/splashscreenComponent'
 	], main);
 
-	function main(m, page) {
+	function main(m, page, loader1) {
 
 		document.addEventListener('deviceready', onDeviceReady);
 
 		m.route.mode = 'hash';
 
 		m.route(document.body, '/', {
-			'/': page
+			'/': page,
+			'/loader1': loader1
 		});
 
 	}
