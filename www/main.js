@@ -12,22 +12,28 @@
 	require([
 		'm',
 		'bluebird',
-		'components/pageComponent',
-		'services/networkService'
+		'services/networkService',
+		'pages/homePage',
+		'pages/loginPage',
+		'pages/todoListPage',
+		'models/userModel'
 	], main);
 
-	function main(m, Promise, page, network) {
+	function main(m, Promise, network, home, login, todo, user) {
 
 		Promise.longStackTraces();
 
 		document.addEventListener('deviceready', onDeviceReady);
 
 		network.init().then(console.log.bind(console));
+		user.init();
 
 		m.route.mode = 'hash';
 
 		m.route(document.body, '/', {
-			'/': page
+			'/': home,
+			'/login': login,
+			'/todo/': todo
 		});
 
 	}
