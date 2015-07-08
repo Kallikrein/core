@@ -1,0 +1,27 @@
+
+
+.ins-logo-block{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.ins-page {
+	line-height: normal;
+}
+
+.ins-button-wrapper {
+	line-height: normal;
+	width: 100%;
+}
+
+.ins-button{
+	width: 90%;
+}
+
+.ins-bottom{
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	height:30px;
+	width:100%;
+}

@@ -11,10 +11,11 @@
 	require([
 		'm',
 		'components/pageComponent',
-		'components/splashscreenComponent'
+		'components/splashscreenComponent',
+		'components/inscriptionComponent'
 	], main);
 
-	function main(m, page, loader1) {
+	function main(m, page, loader1, inscription) {
 
 		document.addEventListener('deviceready', onDeviceReady);
 
@@ -22,7 +23,8 @@
 
 		m.route(document.body, '/', {
 			'/': page,
-			'/loader1': loader1
+			'/loader1': loader1,
+			'/inscription': inscription
 		});
 
 	}

@@ -83,3 +83,27 @@ a {
 	background-color: #ddd;
 	padding: 20px 0;
 }
+
+.gray{
+	color: #b4b4b4;
+}
+
+.center{
+	text-align: center;
+}
+
+.blue{
+	color: blue;
+}
+
+.bblue{
+	background-color: #3b5999;
+}
+
+.bolder{
+	font-weight: bolder;
+}
+
+.pointer{
+	cursor: pointer;
+}
