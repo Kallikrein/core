@@ -3,8 +3,9 @@
 
 	define([
 		'm',
-		'tools'
-	], function(m, T) {
+		'tools',
+		'bluebird'
+	], function(m, T, Promise) {
 
 		return classFactory;
 
@@ -59,6 +60,87 @@
 			return true;
 		}
 
+		function save() {
+			var saveModel = {};
+
+			return (
+				new Promise(function (resolve, reject) {
+					for (var key in attributes) {
+						if (attributes[key].collection)
+							saveModel[key] = T.pluck(this[key](), 'id');
+						else if (attributes[key].model)
+							saveModel[key] = this[key]().id || this[key];
+						else
+							saveModel[key] = this[key]();
+					}
+
+					storage.store(saveModel)
+					.then(function (response) {
+						resolve(this);
+					})
+					.catch(reject);
+				})
+			);
+		}
+
+		function populate(key) {
+			var values = [];
+			var tmp = [];
+
+			return (
+				new Promise(function (resolve, reject) {
+					if (attributes[key].collection || attributes[key].model) {
+						Promise.map(this[key], function (id) {
+							return storage.get(val);
+						})
+						.then(function (values) {
+							console.log(values);
+							this[key](values);
+						})
+						.catch(function (e) {
+							console.log(e);
+							reject(e);
+						})
+						// this[key]().map(function (val) {
+						// 	values.push(storage.get(val));
+						// });
+
+						// values.
+						// this[key](tmp);
+					} else
+						reject('The key is not a collection nor a model, cannot populate');
+
+					resolve(this);
+				})
+			);
+		}
+
+		function populateAll() {
+			var tmp = [];
+
+			return (
+				new Promise(function (resolve, reject) {
+					for (var key in attributes) {
+						if (attributes[key].collection || attributes[key].model) {
+							this[key]().map(function (val) {
+								storage.get(val).then(tmp.push, reject);
+							});
+							this[key](tmp);
+						}
+					}
+
+					resolve(this);
+				})
+			);
+		}
+
 	});
 
 })();
+
+/*
+
+[1] = [{id: 1}]
+[1, 2] = [{id: 1, name: 'toto'}, {id: 2, name: 'tata'}]
+
+ */
