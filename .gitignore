@@ -15,3 +15,6 @@ npm-debug.log
 .DS_Store
 _DS_Store
 Thumbs.db
+
+# webstorm configuration folder
+.idea
