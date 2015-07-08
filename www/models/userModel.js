@@ -50,9 +50,3 @@
 	});
 
 })();
-
-var tesst = {
-	ouhd:      '',
-	ougohljqh: '',
-	cbj:       ''
-};

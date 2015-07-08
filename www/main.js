@@ -14,16 +14,21 @@
 		'bluebird',
 		'components/storageComponent',
 		'components/dataComponent',
-		'services/networkService'
+		'services/networkService',
+		'models/appModel'
 	], main);
 
-	function main(m, Promise, storagePage, dataPage, network) {
+	function main(m, Promise, storagePage, dataPage, network, App) {
 
 		Promise.longStackTraces();
 
 		document.addEventListener('deviceready', onDeviceReady);
 
 		network.init().then(console.log.bind(console));
+
+		var app = new App();
+
+		app.init();
 
 		m.route.mode = 'hash';
 

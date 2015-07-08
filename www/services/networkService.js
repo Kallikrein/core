@@ -7,10 +7,11 @@
 	], function(m, Promise) {
 
 		var _token = m.prop('');
+		var _initialized;
 
 		var api = {
 			// Var
-			isInit: null,
+			// isInit: null,
 			// Ft
 			init:   init,
 			get:    get,
@@ -28,8 +29,10 @@
 		}
 
 		function init() {
-			api.isInit = login();
-			return api.isInit;
+			if (_initialized == null)
+				_initialized = login();
+
+			return _initialized;
 		}
 
 		function login() {

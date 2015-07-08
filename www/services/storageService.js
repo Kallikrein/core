@@ -4,15 +4,24 @@
 	define([
 	], function() {
 
-		return storage;
+		return {
+			get: get,
+			create: create,
+			clean: clean,
+			clear: clear
+		};
 
-		function storage(key, value) {
-			if (arguments.length == 0)
-				localStorage.clear();
-			else if (arguments.length == 1)
-				return localStorage[key];
-			else
-				localStorage[key] = value;
+		function get(id) {
+			return JSON.parse(localStorage.getItem(id));
+		}
+
+		function create() {}
+
+		function clean() {
+		}
+
+		function clear() {
+			localStorage.clear();
 		}
 
 	});
