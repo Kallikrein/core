@@ -21,7 +21,7 @@
                     m("div.gray", "ou"),
                     m("button.button.ins-button",{},"Inscription")
                 ]),
-                m(".ins-bottom.center", [
+                m(".page-footer.bwhite", [
                     m("a.gray.pointer",{},"> Déjà membre ?")
                 ] )
             ]);

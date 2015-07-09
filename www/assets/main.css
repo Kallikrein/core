@@ -33,6 +33,7 @@ a {
 	font-size: 2rem;
 	cursor: pointer;
 	margin: 10px 0;
+	height: 60px;
 }
 
 .button:hover {
@@ -84,26 +85,34 @@ a {
 	padding: 20px 0;
 }
 
-.gray{
-	color: #b4b4b4;
+.pointer{
+	cursor: pointer;
 }
 
 .center{
 	text-align: center;
 }
 
+
+
+.bolder{
+	font-weight: bolder;
+}
+
 .blue{
 	color: blue;
+}
+
+.gray{
+	color: #b4b4b4;
 }
 
 .bblue{
 	background-color: #3b5999;
 }
 
-.bolder{
-	font-weight: bolder;
+.bwhite{
+	background-color: white;
 }
 
-.pointer{
-	cursor: pointer;
-}
+

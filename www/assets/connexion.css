@@ -1,0 +1,32 @@
+
+
+.cnx-logo-block{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.cnx-page {
+	line-height: normal;
+}
+
+.cnx-button-wrapper {
+	line-height: normal;
+	width: 100%;
+}
+
+.cnx-input, .cnx-button{
+	width: 90%;
+}
+
+.cnx-input{
+	border: solid 1px #b4b4b4;
+	/*margin: 25px 0;*/
+	boder: 10px 10px;
+	background-color: white;
+	color: black;
+}
+
+.cnx-bottom{
+	background-color: white;
+}
+
