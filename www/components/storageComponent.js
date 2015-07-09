@@ -3,15 +3,20 @@
 
 	define([
 		'm',
-		'services/storageService',
+		'services/localStorageService',
 		'services/networkService',
-		'services/daemonService'
-	], function(m, storage, network, daemon) {
+		'services/daemonService',
+		'models/userModel'
+	], function(m, storage, network, daemon, User) {
 
 		var component = {};
 
 		component.controller = function() {
 			var self = this;
+
+			self.user = new User();
+
+			self.user2 = User.create();
 
 			self.data = '';
 

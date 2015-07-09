@@ -3,7 +3,7 @@
 
 	define([
 		'm',
-		'services/storageService',
+		'services/localStorageService',
 		'services/networkService',
 		'services/daemonService'
 	], function(m, storage, network, daemon) {
