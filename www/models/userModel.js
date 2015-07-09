@@ -23,8 +23,8 @@
 					type: 'string'
 				},
 				friendList: {
-					type: 'collection',
-					via:  'friend'
+					type:  'collection',
+					model: 'friend'
 				},
 				groups: {
 					type: 'array',
