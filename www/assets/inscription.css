@@ -1,11 +1,11 @@
 
 
-.inscription__logo{
+.ins__logo{
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
 
-.inscription {
+.ins {
 	height: 100%;
 	width: 100%;
 	line-height: normal;
@@ -16,16 +16,35 @@
 	left: 0;
 }
 
-.inscription__button-wrapper{
+.ins__btn-wrapper{
 	line-height: normal;
 	width: 100%;
 }
 
-.button-inscription{
+.button-ins{
 	background-color: #3b5999;
 	width: 90%;
 }
 
-.inscription__footer{
+.ins__footer{
 	background-color: #ffffff;
+}
+
+.ins__btn-wrapper__inputs{
+	transform: scaleY(0);
+	transition: all .5s ease-in-out;
+}
+
+.displayInputs{
+	transform-origin: 50% 0;
+	transform: scaleY(1);
+}
+
+.ins__btn-wrapper__btn{
+	transform: translateY(-155px);
+	transition: all .5s ease-in-out;
+}
+
+.moveButton{
+	transform: translateY(0);
 }

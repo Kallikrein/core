@@ -40,12 +40,12 @@ a {
 	width: 90%;
 }
 
-.btn--blue{
+.btn--facebook{
 	background-color: #3b5999;
 }
 
-.btn:hover {
-	background-color: #f00;
+.btn--normal{
+	background-color: #222222;
 }
 
 .txt--grayed{
@@ -68,9 +68,20 @@ a {
 	padding: 20px 0;
 }
 
-
-.pointer{
+.ipt{
+	border: solid 1px #b4b4b4;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 10px 20px;
+	border-radius: 3px;
+	font-size: 2rem;
 	cursor: pointer;
+	margin: 10px 0;
+	height: 60px;
+}
+
+.ipt--large{
+	width: 90%;
 }
 
 .center{

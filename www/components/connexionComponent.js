@@ -11,7 +11,11 @@
 
         var component = {};
 
-        component.controller = function(){};
+        component.controller = function(){
+            var self = this;
+
+
+        };
 
         component.view = function(ctrl){
             return m(".page.cnx-page", [
