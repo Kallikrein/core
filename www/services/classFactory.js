@@ -9,6 +9,8 @@
 		return classFactory;
 
 		function classFactory(model) {
+			var _arraysPromise;
+			Class.prototype.is = {};
 
 			/* CONSTRUCTOR */
 			var Class = function(values) {
@@ -22,8 +24,26 @@
 				values = values || {};
 				for (var name in model.attributes) {
 					self[name] = getterSetter(values[name] || model.attributes[name].default);
-				}
+					/*
+					** defines a subfunction attached to the getter-setter for each method in
+					** the model.attributes.is : {}
+					*/
+					for (var method in model.attributes[name].is) {
+						self[name].is[method] = isMethod (
+							name,
+							method,
+							model.attributes[name].is[method],
+							self[name]
+						);
+						_arraysPromise[method].push(self[name].is[method]);
+						Class.prototype.is[method] = new Promise(function(resolve, reject) {
+							var _promArray;
+							for (var promise in _arraysPromise[method])
 
+						});
+					}
+
+				}
 				/*
 				** defines an instance.method() for each variable in the model instanceMethods : {}
 				*/
@@ -49,6 +69,36 @@
 
 			/* !CONSTRUCTOR! */
 
+			function valid (name) {
+				return (function (key) {
+					return function () {
+						return new Promise(function (resolve, reject) {
+							if (model.attributes[key].valid())
+							{
+								console.log('valid in factory');
+								console.log(this);
+								resolve(self[name]);
+							}
+							else
+								reject(name + ' didn\'t pass the valid check' );
+						});
+					};
+				})(name);
+			}
+			function isMethod (varName, methodName, method, getterSetter) {
+				return (function (_varName, _methodName, _method, _getterSetter) {
+					return function () {
+						return new Promise(function (resolve, reject) {
+							if (_method.bind(null, _getterSetter)())
+								resolve(_getterSetter);
+							else
+								reject(model.prefix + '/' + varName + ': \'' + _getterSetter() + '\' is not ' + methodName);
+						});
+					};
+				})(varName, methodName, method, getterSetter);
+			}
+
+
 			/* INSTANCE METHODS */
 
 			Class.prototype.save = function save () {
@@ -59,7 +109,15 @@
 			};
 
 			Class.prototype.valid = function valid () {
+				//promise array =
+				//	for each getter setter, 
 				//
+				var array = [];
+
+				for (var name in model.attributes) {
+					array.push(this[name].is.valid());
+				}
+				return Promise.all(array);
 			};
 
 			Class.prototype.current = function current () {
@@ -79,7 +137,7 @@
 			/* STATIC METHODS */
 
 			/*
-			** defines a class.method() or each method in classMethods {}
+			** defines a class.method() for each method in classMethods {}
 			*/
 			for (var name in model.classMethods)
 			{
