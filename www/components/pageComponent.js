@@ -53,18 +53,16 @@
 
 		component.view = function(c) {
 			return m('.page', [
-				m('header.page-header', 'Kernel test'),
-				m('section.page-section', [
-					m('.button-wrapper', [
-						m('button.button', {onclick: c.store}, 'Store data'),
-						m('button.button', {onclick: c.write}, 'Write on localstorage'),
-						m('button.button', {onclick: c.request}, 'Send request'),
-						m('button.button', {onclick: c.display}, 'Display'),
-						m('button.button', {onclick: c.clearAll}, 'Clear all'),
-						m('', c.chrono())
-					])
+				m('header.page__page-header', 'Kernel test'),
+				m('section.page__button-wrapper', [
+					m('button.btn', {onclick: c.store}, 'Store data'),
+					m('button.btn', {onclick: c.write}, 'Write on localstorage'),
+					m('button.btn', {onclick: c.request}, 'Send request'),
+					m('button.btn', {onclick: c.display}, 'Display'),
+					m('button.btn', {onclick: c.clearAll}, 'Clear all'),
+					m('', c.chrono())
 				]),
-				m('footer.page-footer', 'v0.0.1 dev')
+				m('footer.page__footer', 'v0.0.1 dev')
 			]);
 		};
 

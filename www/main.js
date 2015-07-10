@@ -13,10 +13,11 @@
 		'components/pageComponent',
 		'components/splashscreenComponent',
 		'components/inscriptionComponent',
-		'components/connexionComponent'
+		'components/connexionComponent',
+		'components/inscription2Component'
 	], main);
 
-	function main(m, page, loader1, inscription, connexion) {
+	function main(m, page, loader1, inscription, connexion, inscription2) {
 
 		document.addEventListener('deviceready', onDeviceReady);
 
@@ -26,6 +27,7 @@
 			'/': page,
 			'/loader1': loader1,
 			'/inscription': inscription,
+			'/inscription2': inscription2,
 			'/connexion': connexion
 		});
 

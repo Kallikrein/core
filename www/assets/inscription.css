@@ -1,19 +1,31 @@
 
 
-.ins-logo-block{
-    margin-top: 50px;
-    margin-bottom: 50px;
+.inscription__logo{
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
-.ins-page {
+.inscription {
+	height: 100%;
+	width: 100%;
 	line-height: normal;
+	text-align: center;
+	font-size: 2rem;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
-.ins-button-wrapper {
+.inscription__button-wrapper{
 	line-height: normal;
 	width: 100%;
 }
 
-.ins-button{
+.button-inscription{
+	background-color: #3b5999;
 	width: 90%;
+}
+
+.inscription__footer{
+	background-color: #ffffff;
 }

@@ -1,0 +1,99 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: sans-serif;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+.btn {
+	background-color: #222;
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 3px;
+	font-size: 2rem;
+	cursor: pointer;
+	margin: 10px 0;
+	height: 60px;
+}
+
+.btn--large{
+	width: 90%;
+}
+
+.btn--blue{
+	background-color: #3b5999;
+}
+
+.btn:hover {
+	background-color: #f00;
+}
+
+.txt--grayed{
+	color: #b4b4b4;
+}
+
+.csr--pointer{
+	cursor: pointer;
+}
+
+.bottom{
+	line-height: normal;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	font-size: 2rem;
+	text-align: center;
+	background-color: #ddd;
+	padding: 20px 0;
+}
+
+
+.pointer{
+	cursor: pointer;
+}
+
+.center{
+	text-align: center;
+}
+
+
+
+.bolder{
+	font-weight: bolder;
+}
+
+.blue{
+	color: blue;
+}
+
+
+.bblue{
+	background-color: #3b5999;
+}
+
+.bwhite{
+	background-color: white;
+}
+
+

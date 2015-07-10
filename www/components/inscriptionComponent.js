@@ -14,15 +14,15 @@
         component.controller = function(){};
 
         component.view = function(ctrl){
-            return m(".page.ins-page", [
-                m(".ins-logo-block", "sparted logo"),
-                m(".ins-button-wrapper", [
-                    m("button.bblue.button.ins-button",{},"Facebook login"),
-                    m("div.gray", "ou"),
-                    m("button.button.ins-button",{},"Inscription")
+            return m(".inscription", [
+                m(".inscription__logo", "sparted logo"),
+                m(".inscription__button-wrapper", [
+                    m("button.btn.btn--large.btn--blue",{},"Facebook login"),
+                    m("div.txt--grayed", "ou"),
+                    m("button.btn.btn--large.btn--blue",{},"Inscription")
                 ]),
-                m(".page-footer.bwhite", [
-                    m("a.gray.pointer",{},"> Déjà membre ?")
+                m(".bottom.inscription__footer", [
+                    m("a.txt--grayed.csr--pointer",{},"> Déjà membre ?")
                 ] )
             ]);
         };
