@@ -9,8 +9,8 @@
 		return classFactory;
 
 		function classFactory(model) {
-			var _arraysPromise;
-			Class.prototype.is = {};
+			var _arraysPromise = {};
+			
 
 			/* CONSTRUCTOR */
 			var Class = function(values) {
@@ -29,18 +29,31 @@
 					** the model.attributes.is : {}
 					*/
 					for (var method in model.attributes[name].is) {
+						if (self[name].is == null)
+							self[name].is = {};
 						self[name].is[method] = isMethod (
 							name,
 							method,
 							model.attributes[name].is[method],
 							self[name]
 						);
+						if (_arraysPromise[method] == null)
+							_arraysPromise[method] = [];
 						_arraysPromise[method].push(self[name].is[method]);
-						Class.prototype.is[method] = new Promise(function(resolve, reject) {
-							var _promArray;
-							for (var promise in _arraysPromise[method])
 
-						});
+						/**
+						** this big fat ugly closure should be externalised for clarity !
+						** for each instance.gettersetter.is.method() that is defined at least once,
+						** creates an instance method that returns a promise fiwn
+						** instance
+						*/
+						Class.prototype.is[method] = (function(methodName) {
+							return function() {
+								return Promise.all(_arraysPromise[methodName].map(function (promise){
+									return promise();
+								}));
+							};
+						})(method);
 					}
 
 				}
@@ -69,22 +82,9 @@
 
 			/* !CONSTRUCTOR! */
 
-			function valid (name) {
-				return (function (key) {
-					return function () {
-						return new Promise(function (resolve, reject) {
-							if (model.attributes[key].valid())
-							{
-								console.log('valid in factory');
-								console.log(this);
-								resolve(self[name]);
-							}
-							else
-								reject(name + ' didn\'t pass the valid check' );
-						});
-					};
-				})(name);
-			}
+			/*
+			**
+			*/
 			function isMethod (varName, methodName, method, getterSetter) {
 				return (function (_varName, _methodName, _method, _getterSetter) {
 					return function () {
@@ -98,6 +98,7 @@
 				})(varName, methodName, method, getterSetter);
 			}
 
+Class.prototype.is = {};
 
 			/* INSTANCE METHODS */
 
