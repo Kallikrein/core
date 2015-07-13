@@ -28,12 +28,12 @@ a {
 .btn {
 	background-color: #222;
 	color: #fff;
-	padding: 10px 20px;
+	padding: 1vh 1vh;
 	border-radius: 3px;
-	font-size: 2rem;
+	font-size: 3.5vh;
 	cursor: pointer;
-	margin: 10px 0;
-	height: 60px;
+	margin: 1vh 0;
+	height: 10vh;
 }
 
 .btn--large{
@@ -62,22 +62,22 @@ a {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	font-size: 2rem;
+	font-size: 3.5vh;
 	text-align: center;
 	background-color: #ddd;
-	padding: 20px 0;
+	padding: 2vh 0;
 }
 
 .ipt{
 	border: solid 1px #b4b4b4;
 	background-color: #ffffff;
 	color: #000000;
-	padding: 10px 20px;
+	padding: 1vh 4vw;
 	border-radius: 3px;
-	font-size: 2rem;
+	font-size: 3.5vh;
 	cursor: pointer;
-	margin: 10px 0;
-	height: 60px;
+	margin: 2vh 0;
+	height: 10vh;
 }
 
 .ipt--large{
@@ -106,5 +106,20 @@ a {
 .bwhite{
 	background-color: white;
 }
+
+@media screen and (min-width: 900px){
+
+	.ipt--large{
+		max-width: 70vw;
+	}
+
+
+	.btn--large {
+		max-width: 70vw;
+	}
+
+}
+
+
 
 

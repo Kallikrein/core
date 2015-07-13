@@ -16,6 +16,10 @@
 
             self.hidden = true;
 
+            self.connexion = function(){
+                m.route("/connexion");
+            };
+
             self.display = function(){
                 if (!self.hidden)
                     return;
@@ -42,7 +46,9 @@
                     },"Inscription")
                 ]),
                 m(".bottom.ins__footer", [
-                    m("a.txt--grayed.csr--pointer",{},"> Déjà membre ?")
+                    m("p.txt--grayed",{
+                        onclick: ctrl.connexion
+                    },"> Déjà membre ?")
                 ] )
             ]);
         };

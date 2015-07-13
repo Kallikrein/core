@@ -1,8 +1,7 @@
 
 
 .ins__logo{
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin: 3vh 0;
 }
 
 .ins {
@@ -10,7 +9,7 @@
 	width: 100%;
 	line-height: normal;
 	text-align: center;
-	font-size: 2rem;
+	font-size: 3.5vh;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -41,7 +40,7 @@
 }
 
 .ins__btn-wrapper__btn{
-	transform: translateY(-155px);
+	transform: translateY(-26vh);
 	transition: all .5s ease-in-out;
 }
 

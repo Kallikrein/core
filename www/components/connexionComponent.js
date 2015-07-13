@@ -14,22 +14,27 @@
         component.controller = function(){
             var self = this;
 
+            self.inscription = function(){
+                m.route("/inscription");
+            };
 
         };
 
         component.view = function(ctrl){
-            return m(".page.cnx-page", [
-                m(".cnx-logo-block", "sparted logo"),
-                m(".cnx-button-wrapper", [
-                    m("button.bblue.button.cnx-button",{},"Facebook login"),
-                    m("div.gray", "ou"),
-                    m("input.button.cnx-input[placeholder=Adresse e-mail]",{},"Inscription"),
-                    m("input.button.cnx-input[placeholder=Mot de passe]",{},"Inscription"),
-                    m("button.button.cnx-button",{},"Connexion")
+            return m(".cnx", [
+                m(".cnx__logo", "sparted logo"),
+                m(".cnx__btn-wrapper", [
+                    m("button.btn.btn--large.btn--facebook",{},"Facebook login"),
+                    m(".txt--grayed", "ou"),
+                    m("input.ipt.ipt--large[placeholder=Adresse e-mail]",{}),
+                    m("input.ipt.ipt--large[placeholder=Mot de passe]",{}),
+                    m("button.btn.btn--large.btn--normal",{},"Connexion")
                 ]),
-                m(".page-footer.bwhite", [
-                    m("p.gray.pointer",{},"> Nouveau membre ?"),
-                    m("p.gray.pointer",{},"> Mot de passe oublié ?")
+                m(".bottom.cnx__footer", [
+                    m("p.txt--grayed[style='margin-bottom:3vh']",{
+                        onclick: ctrl.inscription
+                    },"> Nouveau membre ?"),
+                    m("p.txt--grayed",{},"> Mot de passe oublié ?")
                 ] )
             ]);
         };
