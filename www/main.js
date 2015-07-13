@@ -14,10 +14,11 @@
 		'components/splashscreenComponent',
 		'components/inscriptionComponent',
 		'components/connexionComponent',
-		'components/inscription2Component'
+		'components/inscription2Component',
+		'components/accueilComponent'
 	], main);
 
-	function main(m, page, loader1, inscription, connexion, inscription2) {
+	function main(m, page, loader1, inscription, connexion, inscription2, accueil) {
 
 		document.addEventListener('deviceready', onDeviceReady);
 
@@ -25,6 +26,7 @@
 
 		m.route(document.body, '/', {
 			'/': page,
+			'/accueil': accueil,
 			'/loader1': loader1,
 			'/inscription': inscription,
 			'/inscription2': inscription2,

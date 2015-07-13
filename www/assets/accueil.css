@@ -1,0 +1,50 @@
+
+.acc{
+	height: 100%;
+	width: 300vw;
+	line-height: normal;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+.acc__logo{
+	width: 100vw;
+    margin: 3vh 0;
+	text-align: center;
+}
+
+.acc__body {
+	transition: all .5s ease;
+}
+
+.acc__body--trans0 {
+	transform: translateX(0);
+}
+
+
+.acc__body--trans1 {
+	transform: translateX(-100vw);
+}
+
+.acc__body--trans2 {
+	transform: translateX(-200vw);
+}
+
+.acc__body--trans3 {
+	transform: translateX(-300vw);
+}
+.ins, .cnx, .fpw {
+	display: inline-block;
+	vertical-align: top;
+}
+
+/*
+.cnx {
+	transform: translate(100vw, -90vh);
+}
+
+.fpw {
+	transform: translate(200vw, -90vh);
+}*/

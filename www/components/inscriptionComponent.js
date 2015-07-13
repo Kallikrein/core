@@ -11,29 +11,25 @@
 
         var component = {};
 
-        component.controller = function(){
+        component.controller = function(transition){
             var self = this;
 
             self.hidden = true;
-
-            self.connexion = function(){
-                m.route("/connexion");
-            };
 
             self.display = function(){
                 if (!self.hidden)
                     return;
 
                 self.hidden = !self.hidden;
-            }
+            };
+
         };
 
-        component.view = function(ctrl){
-            return m(".ins", [
-                m(".ins__logo", "sparted logo"),
+        component.view = function(ctrl, transition){
+            return m(".ins", {}, [
                 m(".ins__btn-wrapper", [
                     m("button.btn.btn--large.btn--facebook",{},"Facebook login"),
-                    m(".txt--grayed", "ou"),
+                    m(".ins__btn-wrapper__txt.txt.txt--grayed", "ou"),
                     m(".ins__btn-wrapper__inputs", {class: ctrl.hidden ? '' : 'displayInputs'}, [
                         m("input.ipt.ipt--large[placeholder=Adresse e-mail]",{}),
                         m("input.ipt.ipt--large[placeholder=Mot de passe]",{
@@ -47,7 +43,7 @@
                 ]),
                 m(".bottom.ins__footer", [
                     m("p.txt--grayed",{
-                        onclick: ctrl.connexion
+                        onclick: transition.bind(null, 1)
                     },"> Déjà membre ?")
                 ] )
             ]);

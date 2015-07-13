@@ -1,26 +1,27 @@
 
 
-.cnx__logo{
-	margin: 3vh 0;
-}
-
 .cnx{
-	height: 100%;
-	width: 100%;
-	line-height: normal;
-	text-align: center;
+	height: 90vh;
 	font-size: 3.5vh;
-	position: absolute;
-	top: 0;
-	left: 0;
+	width: 100vw;
+	position: relative;
 }
 
-.cnx__button-wrapper {
+.cnx__btn-wrapper {
 	line-height: normal;
-	width: 100%;
+	width: 100vw;
+	text-align: center;
 }
 
+.cnx__btn-wrapper__txt {
+	line-height: 10vh;
+}
 .cnx__footer{
+	width: 100vw;
 	background-color: #ffffff;
+	position: absolute;
+	line-height: 6vh;
+	bottom: 2vh;
+	left: 0;
 }
 

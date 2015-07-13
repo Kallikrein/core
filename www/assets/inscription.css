@@ -1,31 +1,26 @@
 
 
-.ins__logo{
-	margin: 3vh 0;
-}
-
 .ins {
-	height: 100%;
-	width: 100%;
-	line-height: normal;
-	text-align: center;
+	height: 90vh;
 	font-size: 3.5vh;
-	position: absolute;
-	top: 0;
-	left: 0;
+	width: 100vw;
+	position: relative;
 }
 
 .ins__btn-wrapper{
 	line-height: normal;
-	width: 100%;
+	width: 100vw;
+	text-align: center;
 }
-
-.button-ins{
-	background-color: #3b5999;
-	width: 90%;
+.ins__btn-wrapper__txt {
+	line-height: 10vh;
 }
-
 .ins__footer{
+	width: 100vw;
+	position: absolute;
+	line-height: 10vh;
+	bottom: 0;
+	left: 0;
 	background-color: #ffffff;
 }
 
@@ -40,7 +35,7 @@
 }
 
 .ins__btn-wrapper__btn{
-	transform: translateY(-26vh);
+	transform: translateY(-24vh);
 	transition: all .5s ease-in-out;
 }
 

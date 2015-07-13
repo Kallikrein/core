@@ -1,0 +1,17 @@
+
+.fpw {
+    height: 90vh;
+    font-size: 3.5vh;
+    width: 100vw;
+    position: relative;
+}
+
+.fpw__footer{
+	width: 100vw;
+	position: absolute;
+	line-height: 10vh;
+	bottom: 0;
+	left: 0;
+	background-color: #ffffff;
+}
+

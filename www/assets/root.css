@@ -32,7 +32,7 @@ a {
 	border-radius: 3px;
 	font-size: 3.5vh;
 	cursor: pointer;
-	margin: 1vh 0;
+	/*margin: 1vh 0;*/
 	height: 10vh;
 }
 
@@ -48,6 +48,10 @@ a {
 	background-color: #222222;
 }
 
+.txt {
+	font-size: 3.5vh;
+}
+
 .txt--grayed{
 	color: #b4b4b4;
 }
@@ -58,14 +62,10 @@ a {
 
 .bottom{
 	line-height: normal;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
 	font-size: 3.5vh;
 	text-align: center;
 	background-color: #ddd;
-	padding: 2vh 0;
+	/*padding: 2vh 0;*/
 }
 
 .ipt{
@@ -76,12 +76,12 @@ a {
 	border-radius: 3px;
 	font-size: 3.5vh;
 	cursor: pointer;
-	margin: 2vh 0;
+	margin-bottom: 2vh;
 	height: 10vh;
 }
 
 .ipt--large{
-	width: 90%;
+	width: 90vw;
 }
 
 .center{
