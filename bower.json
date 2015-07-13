@@ -1,11 +1,12 @@
 {
   "name": "SparterApp-Core",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "homepage": "http://www.sparted.com",
   "authors": [
-    "Joachim Westphal <joachim@sparted.com>"
+    "Joachim Westphal <joachim@sparted.com>",
+    "Thomas Charlat <thomas.charlat@gmail.com>"
   ],
-  "description": "Core of the SparterApp",
+  "description": "Core of the SpartedApp",
   "private": true,
   "ignore": [
     "**/.*",
@@ -18,10 +19,7 @@
   "dependencies": {
     "requirejs": "~2.1.18",
     "mithril": "~0.2.0",
-    "lib": "http://github.com/Elindorath/lib.git#0.0.1",
-    "bluebird": "~2.9.30"
-  },
-  "resolutions": {
-    "lib": "0.0.1"
+    "bluebird": "~2.9.30",
+    "raft": "~0.1.0"
   }
 }

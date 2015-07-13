@@ -5,6 +5,7 @@
 		paths: {
 			m:        'bower_components/mithril/mithril.min',
 			bluebird: 'bower_components/bluebird/js/browser/bluebird.min',
+			factory:  'bower_components/raft/raft',
 			utils:    'lib/utils'
 		}
 	});
@@ -12,22 +13,19 @@
 	require([
 		'm',
 		'bluebird',
-		'components/pageComponent',
-		'services/networkService'
+		'pages/templatePage'
 	], main);
 
-	function main(m, Promise, page, network) {
+	function main(m, Promise, template) {
 
 		Promise.longStackTraces();
 
 		document.addEventListener('deviceready', onDeviceReady);
 
-		network.init().then(console.log.bind(console));
-
 		m.route.mode = 'hash';
 
 		m.route(document.body, '/', {
-			'/': page
+			'/': template
 		});
 
 	}
