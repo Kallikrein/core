@@ -20,6 +20,9 @@
     "requirejs": "~2.1.18",
     "mithril": "~0.2.0",
     "bluebird": "~2.9.30",
-    "raft": "~0.1.0"
+    "raft": "~0.2.0"
+  },
+  "resolutions": {
+    "raft": "~0.2.0"
   }
 }
