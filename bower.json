@@ -20,7 +20,8 @@
     "requirejs": "~2.1.18",
     "mithril": "~0.2.0",
     "bluebird": "~2.9.30",
-    "raft": "~0.2.0"
+    "raft": "~0.2.0",
+    "raft-decorator-localStorage": "*"
   },
   "resolutions": {
     "raft": "~0.2.0"
