@@ -4,8 +4,9 @@
 	define([
 		'm',
 		'bluebird',
-		'factory'
-	], function(m, Promise, factory) {
+		'factory',
+		'decorator'
+	], function(m, Promise, factory, decorator) {
 
 		var Template = {
 			prefix: 'TEMPLATE',
@@ -22,10 +23,11 @@
 						valid: valid
 					}
 				}
-			},
+			}//,
+			//id: 'attribute1'
 		};
 
-		return factory(Template);
+		return decorator(Template, factory(Template));
 
 	});
 

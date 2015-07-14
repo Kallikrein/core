@@ -6,6 +6,7 @@
 			m:        'bower_components/mithril/mithril.min',
 			bluebird: 'bower_components/bluebird/js/browser/bluebird.min',
 			factory:  'bower_components/raft/raft',
+			decorator:'bower_components/raft-decorator-localStorage/raftLocal',
 			utils:    'lib/utils'
 		}
 	});
