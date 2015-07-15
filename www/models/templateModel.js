@@ -5,8 +5,9 @@
 		'm',
 		'bluebird',
 		'factory',
-		'decorator'
-	], function(m, Promise, factory, decorator) {
+		'local',
+		'network'
+	], function(m, Promise, factory, local, network) {
 
 		var Template = {
 			prefix: 'TEMPLATE',
@@ -27,7 +28,7 @@
 			//id: 'attribute1'
 		};
 
-		return decorator(Template, factory(Template));
+		return network(Template, local(Template, factory(Template)));
 
 	});
 

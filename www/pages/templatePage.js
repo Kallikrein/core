@@ -10,12 +10,22 @@
 			controller: function() {
 				var self = this;
 				this.template = new templateModel();
+				this.template.testNetwork('http://mp.sparted.com/login');
+				this.template.testNetwork('http://mp.sparted.com/users');
 				this.load = function () {
 					templateModel.get()
 					.then(function (tmp) {
 						console.log(tmp.attribute1());
 					});
 				}
+
+				this.fetch = function () {
+					templateModel.fetch()
+					.then(function (tmp) {
+						console.log(tmp.attribute1());
+					});
+				};
+
 				this.template.test();
 				this.vm = {
 					globalError: m.prop(''),
@@ -46,6 +56,10 @@
 						onclick: c.load
 					},
 					'load'),
+					m('button', {
+						onclick: c.fetch
+					},
+					'fetch'),
 					m.component(templateComponent)
 				]);
 			}
