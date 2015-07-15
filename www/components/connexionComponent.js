@@ -23,7 +23,7 @@
                     m(".cnx__btn-wrapper__txt.txt--grayed", "ou"),
                     m("", [
                         m("input.ipt.ipt--large[placeholder=Adresse e-mail]",{}),
-                        m("input.ipt.ipt--large[placeholder=Mot de passe]",{}),
+                        m("input.ipt.ipt--large[placeholder=Mot de passe]",{})
                     ]),
                     m("button.btn.btn--large.btn--normal",{},"Connexion")
                 ]),

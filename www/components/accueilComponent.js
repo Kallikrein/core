@@ -34,7 +34,7 @@
 
         component.view = function(ctrl){
             return m(".acc", [
-                m(".acc__logo.txt", "sparted logo"),
+                m(".acc__logo.txt", " "),
                 m(".acc__body",{class: "acc__body--trans" + ctrl.transition()},[
                     m.component(inscription, ctrl.transition),
                     m.component(connexion, ctrl.transition),
