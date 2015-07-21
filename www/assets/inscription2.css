@@ -1,34 +1,62 @@
 
-
-.ins2-page {
+.ins2{
+	height: 100%;
+	width: 100vw;
 	line-height: normal;
+/*	position: absolute;
+	top: 0;
+	left: 0;*/
 }
 
-.ins2-logo-block{
-    margin-top: 50px;
-    margin-bottom: 50px;
+
+.ins2__logo{
+	width: 100vw;
+	height: 15vh;
+	background: url("img/logo-sparted-black.png") no-repeat 50% 50% / 55% auto;
 }
 
-
-.ins2-header-title{
-    font-weight: bold;
-    margin: 0 0 20px 0;
+.ins2__header{
+	padding: 0 4vw;
 }
 
-.ins2-header-text{
-    font-size: initial;
+.ins2__header__title {
+	font-weight: bold;
+	text-align: center;
+	font-size: 2.6vh;
 }
 
-.ins2-input1{
-	margin-right: 20px;
+.ins2__header__txt {
+	text-align: center;
+	font-size: 2.4vh;
+	margin-top: 5vh;
 }
 
-.ins2-input{
+.ins2__body {
+	padding: 2vh 4vw;
+	text-align: center;
+}
+
+.ipt--half {
+	width: 48%;
+}
+
+.ipt--marg-right {
+	margin-right: 2vw;
+}
+
+.txtarea {
 	border: solid 1px #b4b4b4;
-	/*margin: 25px 0;*/
-	boder: 10px 10px;
-	background-color: white;
-	color: black;
-	width: 40%;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 1vh 4vw;
+	border-radius: 3px;
+	font-size: 3vh;
+	cursor: pointer;
+	margin-bottom: 2vh;
+	height: 15vh;
+}
+
+.txtarea--large {
+	width: 99%
 }
 

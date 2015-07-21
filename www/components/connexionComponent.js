@@ -18,6 +18,7 @@
 
         component.view = function(ctrl, transition){
             return m(".cnx", {} ,[
+
                 m(".cnx__btn-wrapper", [
                     m("button.btn.btn--large.btn--facebook",{},"Facebook login"),
                     m(".cnx__btn-wrapper__txt.txt--grayed", "ou"),

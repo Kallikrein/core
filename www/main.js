@@ -11,14 +11,11 @@
 	require([
 		'm',
 		'components/pageComponent',
-		'components/splashscreenComponent',
-		'components/inscriptionComponent',
-		'components/connexionComponent',
-		'components/inscription2Component',
-		'components/accueilComponent'
+		'components/accueilComponent',
+		'components/inscription0Component'
 	], main);
 
-	function main(m, page, loader1, inscription, connexion, inscription2, accueil) {
+	function main(m, page, accueil, inscription) {
 
 		document.addEventListener('deviceready', onDeviceReady);
 
@@ -27,10 +24,7 @@
 		m.route(document.body, '/', {
 			'/': page,
 			'/accueil': accueil,
-			'/loader1': loader1,
-			'/inscription': inscription,
-			'/inscription2': inscription2,
-			'/connexion': connexion
+			'/inscription': inscription
 		});
 
 	}

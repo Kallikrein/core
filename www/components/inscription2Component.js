@@ -14,22 +14,30 @@
         component.controller = function(){};
 
         component.view = function(ctrl){
-            return m(".page.ins2-page", [
-                m(".ins2-logo-block", "sparted logo"),
-                m(".ins2-header",[
-                    m(".ins2-header-title.center", "Votre organisation :"),
-                    m(".ins2-header-text.center", "Veuillez saisir votre code " +
+            return m(".ins2", [
+                m(".ins2__logo", " "),
+                m(".ins2__header",[
+                    m(".ins2__header__title", "VOTRE ORGANISATION :"),
+                    m(".ins2__header__txt", "Veuillez saisir votre code " +
                     "démo afin de pouvoir sélectionner votre organisation")
                 ]),
-                m(".ins2-button-wrapper", [
-                    m("input.button.ins2-input.ins2-input1",{},"Inscription"),
-                    m("input.button.ins2-input",{},"Inscription"),
-                    m("button.button.cnx-button",{},"Connexion")
-                ]),
-                m(".page-footer.bwhite", [
+                m(".ins2__body", [
+                    m("", [
+                        m("input.ipt.ipt--half.ipt--marg-right[placeholder=France]",{},"Inscription"),
+                        m("input.ipt.ipt--half[placeholder=75011][type=number]",{},"Inscription")
+                    ])/*,
+                    m("textarea.txtarea.txtarea--large"),
+                    m("", [
+                        m("span","Mon rôle:"),
+                        m("select", [
+                            m("option", "Formation")
+                        ])
+                    ])*/
+                ])/*,
+                m(".ins2__footer", [
                     m("p.gray.pointer",{},"> Nouveau membre ?"),
                     m("p.gray.pointer",{},"> Mot de passe oublié ?")
-                ] )
+                ] )*/
             ]);
         };
 

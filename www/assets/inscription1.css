@@ -1,0 +1,120 @@
+
+.ins1 {
+	height: 100%;
+	width: 100vw;
+	line-height: normal;
+/*	position: absolute;
+	top: 0;
+	left: 0;*/
+}
+
+.ins1__logo {
+	width: 100vw;
+	height: 15vh;
+	background: url("img/logo-sparted-black.png") no-repeat 50% 50% / 55% auto;
+}
+
+.ins1__header {
+	border: solid 1px #b4b4b4;
+	height: 15vh;
+	width: 15vh;
+	margin: 0 auto;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 15vh;
+}
+
+.ins1__header__txt {
+	line-height: normal;
+	font-size: 3vh;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.ins1__body__gender {
+	/*text-align: center;*/
+	padding: 4vh 4vw;
+}
+
+.ins1__body__gender__woman, .ins1__body__gender__man {
+	display: inline-block;
+	width: 50%;
+	margin: 0;
+	padding: 0;
+	height: 8vh;
+	line-height: 8vh;
+	text-align: center;
+}
+
+.ins1__body__infos {
+	text-align: center;
+	font-weight: bold;
+	font-size: 3vh;
+}
+
+.ins1__body__name {
+	padding: 4vh 4vw;
+}
+
+.ins1__body__birthdate {
+	text-align: center;
+}
+
+.ins1__body__birthdate__txt, .ins1__body__birthdate__day, .ins1__body__birthdate__month, .ins1__body__birthdate__year {
+	display: inline-block;
+}
+
+
+.ipt--month, .ipt--day, .ipt--year {
+	width: 100%;
+}
+
+.ins1__body__birthdate__txt {
+	font-weight: bold;
+	font-size: 2.5vh;
+	text-align: center;
+	width: 25%;
+	/*margin-right: 4vw;*/
+}
+
+.ins1__body__birthdate__day {
+	margin-right: 2vw;
+	width: 27%;
+}
+
+.ins1__body__birthdate__month {
+	margin-right: 2vw;
+	width: 27%;
+}
+
+.ins1__body__birthdate__year {
+	width: 35%;
+}
+
+.ins1__body__birthdate__ipts {
+	display: inline-block;
+	width: 72vw;
+}
+
+.ipt--height8 {
+	height: 8vh;
+}
+
+.ipt--day {
+}
+
+.ipt--month {
+}
+
+.ipt--year {
+
+}
+
+.ins1__body__btn {
+	width: 100%;
+	padding: 4vh 4vw;
+}
+
+.btn--full {
+	width: 100%
+}

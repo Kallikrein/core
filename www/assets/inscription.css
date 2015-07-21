@@ -1,5 +1,14 @@
 
 
+/*.ins {
+	height: 100%;
+	width: 200vw;
+	line-height: normal;
+	position: absolute;
+	top: 0;
+	left: 0;
+}*/
+
 .ins {
 	height: 100%;
 	font-size: 3.5vh;
