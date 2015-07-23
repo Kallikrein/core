@@ -19,7 +19,8 @@
     "requirejs": "~2.1.18",
     "mithril": "~0.2.0",
     "lib": "http://github.com/Elindorath/lib.git#0.0.1",
-    "bluebird": "~2.9.30"
+    "bluebird": "~2.9.30",
+    "viewport-units-buggyfill": "~0.5.4"
   },
   "resolutions": {
     "lib": "0.0.1"

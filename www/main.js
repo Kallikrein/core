@@ -3,25 +3,34 @@
 
 	require.config({
 		paths: {
-			m:        'bower_components/mithril/mithril.min',
-			bluebird: 'bower_components/bluebird/js/browser/bluebird.min'
+			m:             'bower_components/mithril/mithril.min',
+			bluebird:      'bower_components/bluebird/js/browser/bluebird.min',
+			viewport:      'bower_components/viewport-units-buggyfill/viewport-units-buggyfill',
+			viewportHacks: 'bower_components/viewport-units-buggyfill/viewport-units-buggyfill.hacks'
 		}
 	});
 
 	require([
 		'm',
+		'viewport',
+		'viewportHacks',
 		'components/pageComponent',
 		'components/accueilComponent',
 		'components/inscription0Component'
 	], main);
 
-	function main(m, page, accueil, inscription) {
+	function main(m, viewport, viewportHacks, page, accueil, inscription) {
 
 		document.addEventListener('deviceready', onDeviceReady);
 
+		viewport.init({
+			force: true,
+			hacks: viewportHacks
+		});
+
 		m.route.mode = 'hash';
 
-		m.route(document.body, '/', {
+		m.route(document.body, '/accueil', {
 			'/': page,
 			'/accueil': accueil,
 			'/inscription': inscription

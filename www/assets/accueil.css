@@ -1,7 +1,8 @@
 
 .acc{
 	height: 100%;
-	width: 300vw;
+	width: 100vw;
+	overflow: hidden;
 	line-height: normal;
 	position: absolute;
 	top: 0;
@@ -18,10 +19,11 @@
 .acc__body {
 	transition: all .5s ease;
 	height: 88vh;
+	width: 300vw;
 }
 
 .acc__body--trans0 {
-	transform: translateX(0);
+	transform: translateX(0vw);
 }
 
 
