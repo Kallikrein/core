@@ -16,10 +16,12 @@
 		'viewportHacks',
 		'components/pageComponent',
 		'components/accueilComponent',
-		'components/inscription0Component'
+		'components/inscription0Component',
+		'components/homepageComponent',
+		'components/cardComponent'
 	], main);
 
-	function main(m, viewport, viewportHacks, page, accueil, inscription) {
+	function main(m, viewport, viewportHacks, page, accueil, inscription, home, card) {
 
 		document.addEventListener('deviceready', onDeviceReady);
 
@@ -30,10 +32,12 @@
 
 		m.route.mode = 'hash';
 
-		m.route(document.body, '/accueil', {
+		m.route(document.body, '/home', {
 			'/': page,
 			'/accueil': accueil,
-			'/inscription': inscription
+			'/inscription': inscription,
+			'/home': home,
+			'/card'	: card
 		});
 
 	}

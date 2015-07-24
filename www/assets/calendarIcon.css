@@ -1,0 +1,46 @@
+
+.cicon {
+    /*height: 25vh;*/
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+    position: relative;
+    text-align: center;
+}
+
+.cicon__img {
+    height: 17vh;
+}
+
+.cicon__message {
+    font-size: 2.8vh;
+    font-family: Montserrat;
+}
+
+.cicon__month {
+    position: absolute;
+    top: 3vh;
+    width: 100%;
+    font-family: Montserrat;
+    font-weight: bold;
+    text-align: center;
+    height: 2.8vh;
+    line-height: 2.8vh;
+    font-size: 1.6vh;
+}
+
+.cicon__day {
+    /*transform: translateY(-20vh);*/
+    color: #000000;
+    font-size: 5.6vh;
+    position: absolute;
+    top: 5.6vh;
+    width: 100%;
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: bold;
+    height: 7.2vh;
+    line-height: 7.2vh;
+    /*left: 6vh;*/
+}
+

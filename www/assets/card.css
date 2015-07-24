@@ -1,0 +1,37 @@
+
+.card {
+/*    height: 50vh;*/
+    border-radius: 5% / 7%;
+    text-align: center;
+    color: #ffffff;
+    padding: 2.8vh 2.8vh 1.7vh;
+    margin-top: 16vh;
+}
+
+.card__name {
+    font-size: 2vh;
+    font-weight: bold;
+    /*margin-bottom: 1vh;*/
+    font-family: Montserrat;
+}
+
+.card__title {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 3.4vh;
+    padding: 1vh;
+}
+
+
+
+.card__icon {
+    /*margin: 4vh 0;*/
+    height: 22vh;
+    line-height: 22vh;
+}
+
+.card__footer {
+    color: rgba(255,255,255,.5);
+    font-family: "Source Sans Pro";
+    font-size: 2.2vh;
+}
