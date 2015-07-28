@@ -24,16 +24,22 @@
         };
 
         component.view = function(ctrl, card){
-            return m(".card",{style: {backgroundColor: card.background}}, [
-                m(".card__name", card.name),
-                m("h1.card__title", card.title),
-                /*m("img.card__icon[src=assets/img/ico-card-examen.png]"),*/
-                m(".card__icon", [
-                    m.component(ctrl.icons[card.icon.type], card.icon.data)
-                ]),
-                m(".card__footer", "Touch to start")
+            return m(".card",{style: {backgroundColor:(card.position == "current" ? card.background : ""),
+                zIndex: ("" + card.zindex)
+            },
+                class: ("card-" + card.position)
+            },[
+                m(".card__body", {class: ("card__body--" + card.position)},[
+                    m(".card__name", card.name),
+                    m("h1.card__title", card.title),
+                    m(".card__icon", [
+                        m.component(ctrl.icons[card.icon.type], card.icon.data)
+                    ]),
+                    m(".card__footer", "Touch to start")
+                ])
             ]);
         };
+
 
         return component;
     });

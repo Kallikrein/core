@@ -1,11 +1,20 @@
 
 .card {
-/*    height: 50vh;*/
+    height: 36.71vh;
     border-radius: 5% / 7%;
     text-align: center;
     color: #ffffff;
     padding: 2.8vh 2.8vh 1.7vh;
-    margin-top: 16vh;
+    position: absolute;
+    width: 100%;
+    transition: all ease-in-out .5s;
+}
+
+.card__body {
+    height: 100%;
+    width: 100%;
+    transition: all ease-in-out .5s;
+    opacity: 1;
 }
 
 .card__name {
@@ -19,7 +28,7 @@
     font-family: Montserrat;
     font-weight: bold;
     font-size: 3.4vh;
-    padding: 1vh;
+    padding-top: 1vh;
 }
 
 
@@ -28,10 +37,19 @@
     /*margin: 4vh 0;*/
     height: 22vh;
     line-height: 22vh;
+    text-align: center;
 }
 
 .card__footer {
     color: rgba(255,255,255,.5);
     font-family: "Source Sans Pro";
     font-size: 2.2vh;
+}
+
+.card__body--current {
+
+}
+
+.card__body--prev, .card__body--next {
+    opacity: 0;
 }

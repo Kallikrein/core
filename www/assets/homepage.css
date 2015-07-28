@@ -10,11 +10,16 @@
 }
 
 .home__body {
+	line-height: 100vh;
 	height: 100vh;
+	text-align: center;
 	background-color: rgba(0,0,0,.25);
 }
 
 .home__body__logo {
+	line-height: normal;
+	position: absolute;
+	width: 100%;
 	text-align: center;
 	padding: 2vh 0;
 }
@@ -42,21 +47,50 @@
 }
 
 .icon-refresh, .icon-library {
-	height: 4vh;
+	height: 3.5vh;
 }
 
 .icon-kquiz {
-	height: 10vh;
+	height: 7vh;
 }
 
 .home__body__cards {
 	width: 84vw;
 	margin: auto;
+	position: relative;
+	perspective: 111vh;
+	height: 36.71vh;
+	vertical-align: middle;
+	display: inline-block;
+	line-height: normal;
 }
 
 .refresh-txt, .library-txt {
     font-family: "Source Sans Pro";
     font-size: 2.2vh;
+}
+
+.card-next {
+	top: 0;
+	opacity: 0.5;
+	background-color: #808080;
+	z-index: 1;
+	transform: rotateX(-30deg) translate3d(0vh, 1vh, -20vh);
+}
+
+.card-current {
+	opacity: 1;
+	top: 0;
+	z-index: 2;
+}
+
+.card-prev {
+	/*top: 20vh;*/
+	opacity: 0.5;
+	top: 0;
+	background-color: #808080;
+	z-index: 1;
+	transform: rotateX(30deg) translate3d(0vh, -1vh, -20vh);
 }
 
 

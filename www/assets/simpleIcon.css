@@ -1,4 +1,6 @@
 
 .sicon {
-    width: 50vw;
+    /*width: 50vw;*/
+    height: 17vh;
+    vertical-align: middle;
 }
