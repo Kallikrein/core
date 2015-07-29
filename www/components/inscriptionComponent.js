@@ -5,7 +5,7 @@
 (function(){
     'use strict';
 
-    define([
+   define([
         'm'
     ], function(m){
 

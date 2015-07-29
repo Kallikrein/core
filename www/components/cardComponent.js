@@ -14,7 +14,7 @@
 
         var component = {};
 
-        component.controller = function(card, icon){
+        component.controller = function(card){
             var self = this;
 
             self.icons = {

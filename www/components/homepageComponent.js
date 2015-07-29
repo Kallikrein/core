@@ -8,7 +8,7 @@
     define([
         'm',
         'components/cardComponent'
-    ], function(m, card){
+    ], function(m, Card){
 
         var component = {};
 
@@ -50,6 +50,23 @@
             };
 
             var card3 = {
+                name: "Training course",
+                title: "Discipline 1 - stage 1",
+                background: "rgba(115,140,193,.6)",
+                icon: {
+                    type: "simpleIcon",
+                    data: {
+                        src: "assets/img/ico-card-examen.png"
+                    }
+                },
+                zindex: 2,
+                position: "next"
+                /*                is_current: false,
+                 is_previous: false,
+                 is_next: false*/
+            };
+
+            var card4 = {
                 name: "Daily serie",
                 title: "Mardi 31 Octobre",
                 background: "rgba(238,66,68,.6)",
@@ -60,14 +77,14 @@
                         message: "5/5 left"
                     }
                 },
-                zindex: 2,
+                zindex: 3,
                 position: "current"
                 /*                is_current: false,
                  is_previous: false,
                  is_next: false*/
             };
 
-            self.cards = [card, card2, card3];
+            self.cards = [card, card2, card3, card4];
             self.currentCard = self.cards.length - 1;
 
             self.showNext = function() {
@@ -103,8 +120,11 @@
                 self.currentCard = current;
             };
 
+            self.res = [];
 
-
+            for (var i = 0; i < self.cards.length; ++i) {
+                self.res.push(m.component(Card, self.cards[i]));
+            }
         };
 
         component.view = function(ctrl){
@@ -113,11 +133,7 @@
                     m(".home__body__logo", [
                         m("img.icon-kquiz[src=assets/img/logo-kquiz.png]")
                     ]),
-                    m(".home__body__cards",[
-                        m.component(card, ctrl.cards[0]),
-                        m.component(card, ctrl.cards[1]),
-                        m.component(card, ctrl.cards[2])
-                    ]),
+                    m(".home__body__cards",ctrl.res),
                     m(".bottom.home__body__footer",[
                         m(".home__body__footer__refresh",{
                             onclick: ctrl.showPrev

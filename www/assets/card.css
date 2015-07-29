@@ -7,13 +7,13 @@
     padding: 2.8vh 2.8vh 1.7vh;
     position: absolute;
     width: 100%;
-    transition: all ease-in-out .5s;
+    transition: all ease-in-out .4s;
 }
 
 .card__body {
     height: 100%;
     width: 100%;
-    transition: all ease-in-out .5s;
+    transition: all ease-in-out .4s;
     opacity: 1;
 }
 
