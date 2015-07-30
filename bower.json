@@ -17,11 +17,13 @@
     "tests"
   ],
   "dependencies": {
+    "1347501": "https://gist.github.com/1347501.git",
     "requirejs": "~2.1.18",
     "mithril": "~0.2.0",
     "bluebird": "~2.9.30",
     "raft": "~0.3.0",
     "raft-decorator-localStorage": "~0.2.0",
-    "raft-decorator-network": "~0.2.0"
+    "raft-decorator-network": "~0.2.0",
+    "prefixfree": "https://github.com/LeaVerou/prefixfree.git#gh-pages"
   }
 }
