@@ -1,0 +1,57 @@
+/* MONTSERRAT */
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/montserrat/montserrat-400.eot');
+  src: local('Montserrat-Regular'),
+       url('fonts/montserrat/montserrat-400.eot?#iefix') format('embedded-opentype'),
+       url('fonts/montserrat/montserrat-400.woff2') format('woff2'),
+       url('fonts/montserrat/montserrat-400.woff') format('woff'),
+       url('fonts/montserrat/montserrat-400.ttf') format('truetype'),
+       url('fonts/montserrat/montserrat-400.svg#Montserrat') format('svg');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/montserrat/montserrat-700.eot');
+  src: local('Montserrat-Bold'),
+       url('fonts/montserrat/montserrat-700.eot?#iefix') format('embedded-opentype'),
+       url('fonts/montserrat/montserrat-700.woff2') format('woff2'),
+       url('fonts/montserrat/montserrat-700.woff') format('woff'),
+       url('fonts/montserrat/montserrat-700.ttf') format('truetype'),
+       url('fonts/montserrat/montserrat-700.svg#Montserrat') format('svg');
+}
+
+
+
+/* SOURCE SANS PRO */
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/source-sans-pro/source-sans-pro-400.eot');
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'),
+       url('fonts/source-sans-pro/source-sans-pro-400.eot?#iefix') format('embedded-opentype'),
+       url('fonts/source-sans-pro/source-sans-pro-400.woff2') format('woff2'),
+       url('fonts/source-sans-pro/source-sans-pro-400.woff') format('woff'),
+       url('fonts/source-sans-pro/source-sans-pro-400.ttf') format('truetype'),
+       url('fonts/source-sans-pro/source-sans-pro-400.svg#SourceSansPro') format('svg');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/source-sans-pro/source-sans-pro-700.eot');
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'),
+       url('fonts/source-sans-pro/source-sans-pro-700.eot?#iefix') format('embedded-opentype'),
+       url('fonts/source-sans-pro/source-sans-pro-700.woff2') format('woff2'),
+       url('fonts/source-sans-pro/source-sans-pro-700.woff') format('woff'),
+       url('fonts/source-sans-pro/source-sans-pro-700.ttf') format('truetype'),
+       url('fonts/source-sans-pro/source-sans-pro-700.svg#SourceSansPro') format('svg');
+}

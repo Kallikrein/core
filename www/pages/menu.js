@@ -12,6 +12,7 @@
 		};
 
 		component.view = function(c) {
+			console.log('MENU VIEW');
 			return m('.menu', 'Menu');
 		};
 

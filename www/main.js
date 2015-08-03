@@ -3,7 +3,7 @@
 
 	require.config({
 		paths: {
-			m:        'bower_components/mithril/mithril.min',
+			m:        'bower_components/mithril/mithril',
 			bluebird: 'bower_components/bluebird/js/browser/bluebird.min'
 		}
 	});
@@ -12,7 +12,9 @@
 	var initDependencies = [
 		'm',
 		'libs/mithril-ui-router',
-		'bluebird'
+		'bluebird',
+		'libs/touchEvents',
+		'libs/touchHelper'
 	];
 
 	if (onDevice)
@@ -20,7 +22,7 @@
 
 	require(initDependencies, init);
 
-	function init(m, mx, Promise, cordova) {
+	function init(m, mx, Promise, touch, helper) {
 		var original = m.route;
 
 		m.route = mx.route;
@@ -30,6 +32,8 @@
 		Promise.longStackTraces();
 
 		loadCss('assets/main.css');
+		loadCss('assets/fonts.css');
+		loadCss('assets/auth.css');
 /*
 		if (cordova)
 			// Do stuff
@@ -114,45 +118,45 @@
 			menu:               menu
 		};
 
-		m.route(app, 'auth.login', {
+		m.route(app, 'auth', {
 			'auth': {
 				url:    '/auth',
 				module: 'auth',
 				place:  '.m_app'
 			},
-			'auth.login': {
-				url:    '/login',
-				module: 'authLog',
-				place:  '.m_login',
-				onEnter: function(elem) {
-					Animations.fromRight(elem);
-				}
-			},
-			'auth.signup': {
-				url:    '/signup',
-				module: 'authSign',
-				place:  '.m_login'
-			},
-			'auth.password': {
-				url:    '/password',
-				module: 'authPass',
-				place:  '.m_login'
-			},
+			// 'auth.login': {
+			// 	url:     '/login',
+			// 	module:  'authLog',
+			// 	place:   '.m_login',
+			// 	onEnter: function(elem) {
+			// 		Animations.fromRight(elem);
+			// 	}
+			// },
+			// 'auth.signup': {
+			// 	url:    '/signup',
+			// 	module: 'authSign',
+			// 	place:  '.m_login'
+			// },
+			// 'auth.password': {
+			// 	url:    '/password',
+			// 	module: 'authPass',
+			// 	place:  '.m_login'
+			// },
 			'signup': {
 				url:    '/signup',
 				module: 'signup',
 				place:  '.m_app'
 			},
-			'signup.perso': {
-				url:    '/perso',
-				module: 'signupPerso',
-				place:  '.m_signup'
-			},
-			'signup.pro': {
-				url:    '/pro',
-				module: 'signupPro',
-				place:  '.m_signup'
-			},
+			// 'signup.perso': {
+			// 	url:    '/perso',
+			// 	module: 'signupPerso',
+			// 	place:  '.m_signup'
+			// },
+			// 'signup.pro': {
+			// 	url:    '/pro',
+			// 	module: 'signupPro',
+			// 	place:  '.m_signup'
+			// },
 			'loader': {
 				url:    '/loader',
 				module: 'loader',
@@ -168,41 +172,41 @@
 				module: 'profile',
 				place:  '.m_app'
 			},
-			'profile.rating': {
-				url:    '/rating',
-				module: 'profileRating',
-				place:  '.m_profile'
-			},
-			'profile.following': {
-				url:    '/following',
-				module: 'profileFollowing',
-				place:  '.m_profile'
-			},
-			'profile.followers': {
-				url:    '/followers',
-				module: 'profileFollowers',
-				place:  '.m_profile'
-			},
+			// 'profile.rating': {
+			// 	url:    '/rating',
+			// 	module: 'profileRating',
+			// 	place:  '.m_profile'
+			// },
+			// 'profile.following': {
+			// 	url:    '/following',
+			// 	module: 'profileFollowing',
+			// 	place:  '.m_profile'
+			// },
+			// 'profile.followers': {
+			// 	url:    '/followers',
+			// 	module: 'profileFollowers',
+			// 	place:  '.m_profile'
+			// },
 			'awards': {
 				url:    '/awards',
 				module: 'awards',
 				place:  '.m_app'
 			},
-			'awards.certificates': {
-				url:    '/certificates',
-				module: 'awardsCertificates',
-				place:  '.m_awards'
-			},
-			'awards.gifts': {
-				url:    '/gifts',
-				module: 'awardsGifts',
-				place:  '.m_awards'
-			},
-			'awards.benefits': {
-				url:    '/benefits',
-				module: 'awardsBenefits',
-				place:  '.m_awards'
-			},
+			// 'awards.certificates': {
+			// 	url:    '/certificates',
+			// 	module: 'awardsCertificates',
+			// 	place:  '.m_awards'
+			// },
+			// 'awards.gifts': {
+			// 	url:    '/gifts',
+			// 	module: 'awardsGifts',
+			// 	place:  '.m_awards'
+			// },
+			// 'awards.benefits': {
+			// 	url:    '/benefits',
+			// 	module: 'awardsBenefits',
+			// 	place:  '.m_awards'
+			// },
 			'ladder': {
 				url:    '/ladder',
 				module: 'ladder',
@@ -210,7 +214,7 @@
 			}
 		});
 
-		m.render(document.querySelector('.m_menu'), menu);
+		// m.render(document.querySelector('.m_menu'), menu);
 	}
 
 	function loadCss(url) {

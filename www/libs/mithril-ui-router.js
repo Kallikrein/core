@@ -239,8 +239,8 @@
          * @param module The module to set up
          */
         mx.route.$install = function( place , module ) {
-            var controller = module.controller ? new module.controller() : undefined;
-            m.render( place , module.view( controller ) , true );
+            // var controller = module.controller ? new module.controller() : undefined;
+            m.mount( place , module/*.view( controller )*/ );
         };
 
         /**
