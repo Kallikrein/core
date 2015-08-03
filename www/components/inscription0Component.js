@@ -29,8 +29,7 @@
                 }
                 self.modifications(0);
                 return self.scale();
-            }
-
+            };
 
         };
 

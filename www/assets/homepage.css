@@ -70,7 +70,7 @@
     font-size: 2.2vh;
 }
 
-.card-next {
+/*.card-next {
 	top: 0;
 	opacity: 0.5;
 	background-color: #808080;
@@ -85,10 +85,10 @@
 }
 
 .card-prev {
-	/*top: 20vh;*/
+	*//*top: 20vh;*//*
 	opacity: 0.5;
 	top: 0;
 	background-color: #808080;
 	z-index: 1;
 	transform: rotateX(30deg) translate3d(0vh, -1vh, -20vh);
-}
+}*/

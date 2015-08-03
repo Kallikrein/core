@@ -7,14 +7,14 @@
     padding: 2.8vh 2.8vh 1.7vh;
     position: absolute;
     width: 100%;
-    transition: all ease-in-out .4s;
+    /*transition: all ease-in-out .4s;*/
 }
 
 .card__body {
     height: 100%;
     width: 100%;
-    transition: all ease-in-out .4s;
-    opacity: 1;
+    transition: opacity ease-in-out .4s;
+    /*opacity: 0;*/
 }
 
 .card__name {
@@ -46,10 +46,18 @@
     font-size: 2.2vh;
 }
 
-.card__body--current {
+/*.card__body--current {
 
 }
 
 .card__body--prev, .card__body--next {
     opacity: 0;
+}*/
+
+.home__body__input {
+    position: absolute;
+    bottom: 15vh;
+    left: 0vw;
+    width: 100vw;
 }
+

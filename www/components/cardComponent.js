@@ -24,12 +24,17 @@
         };
 
         component.view = function(ctrl, card){
-            return m(".card",{style: {backgroundColor:(card.position == "current" ? card.background : ""),
-                zIndex: ("" + card.zindex)
-            },
-                class: ("card-" + card.position)
+
+            return m(".card",{
+                style: {
+                    backgroundColor:  card.background,
+                    zIndex: ("" + card.zindex)
+                },
+                class: "card-" + card.position + " card" + card.id
             },[
-                m(".card__body", {class: ("card__body--" + card.position)},[
+                m(".card__body", {
+                    class: "card__body--" + card.position + " card__body" + card.id
+                },[
                     m(".card__name", card.name),
                     m("h1.card__title", card.title),
                     m(".card__icon", [
