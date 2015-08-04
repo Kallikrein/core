@@ -3,9 +3,20 @@
 
 	require.config({
 		paths: {
-			m:        'bower_components/mithril/mithril',
-			bluebird: 'bower_components/bluebird/js/browser/bluebird.min'
+			m:           'bower_components/mithril/mithril',
+			bluebird:    'bower_components/bluebird/js/browser/bluebird.min',
+			factory:        'bower_components/raft/raft',
+			local:   'bower_components/raft-decorator-localStorage/raftLocal',
+			network: 'bower_components/raft-decorator-network/raftNetwork'
 		}
+	});
+
+	require(['factory', 'local', 'network'], function (raft, local, network) {
+		raft.decorate([local, network]);
+	});
+
+	require(['models/userModel', 'models/scenarioModel', 'models/contentModel'], function (User, Scenario, Content) {
+		window.user = new User({id: 'bob'});
 	});
 
 	var onDevice = document.URL.indexOf('http://') === -1 && document.URL.indexOf('https://') === -1;
@@ -15,8 +26,8 @@
 		'bluebird'
 	];
 
-	if (onDevice)
-		initDependencies.push('cordova');
+	// if (onDevice)
+	// 	initDependencies.push('cordova');
 
 	require(initDependencies, init);
 
