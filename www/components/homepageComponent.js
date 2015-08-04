@@ -13,13 +13,16 @@
         var component = {};
 
         component.controller = function(){
+
             var self = this;
 
             var card = {
                 id: 0,
                 name: "Training course",
                 title: "Discipline 1 - stage 1",
+                title2: "Discipline 1 - stage 1",
                 background: "rgba(115,140,193,.6)",
+                background2: "rgb(115,140,193)",
                 icon: {
                     type: "simpleIcon",
                     data: {
@@ -37,7 +40,9 @@
                 id: 2,
                 name: "Breaking news",
                 title: "Nouveau mode de jeu",
+                title2: "",
                 background: "rgba(191,176,116,.7)",
+                background2: "rgb(191,176,116)",
                 icon: {
                     type: "simpleIcon",
                     data: {
@@ -52,7 +57,9 @@
                 id: 3,
                 name: "Training course",
                 title: "Discipline 1 - stage 1",
+                title2: "Discipline 1 - stage 1",
                 background: "rgba(115,140,193,.6)",
+                background2: "rgb(115,140,193)",
                 icon: {
                     type: "simpleIcon",
                     data: {
@@ -70,7 +77,9 @@
                 id: 4,
                 name: "Daily serie",
                 title: "Mardi 31 Octobre",
+                title2: "Mardi 31 Octobre",
                 background: "rgba(238,66,68,.6)",
+                background2: "rgb(238,66,68)",
                 icon: {
                     type: "calendarIcon",
                     data: {
@@ -86,6 +95,21 @@
             };
 
             self.cards = [card, card2, card4];
+
+            self.card = {
+                name: "Breaking news",
+                title: "Nouveau mode de jeu",
+                background: "rgba(191,176,116,.7)",
+                background2: "rgb(191,176,116)",
+                icon: {
+                    type: "simpleIcon",
+                    data: {
+                        src: "assets/img/ico-card-breakingnews.png"
+                    }
+                },
+                zindex: 1,
+                position: "next"
+            };
 
             self.currentCard = self.cards.length - 1;
             self.bool = true;
@@ -155,18 +179,19 @@
             self.tm = new TimelineMax({onUpdate: updateSlider});
             self.doAnim = true;
             self.cardsShown = false;
+            self.cardSelected = false;
 
             self.handleCards = function(element, isInit){
 
-                if (!self.doAnim)
+                if (!self.doAnim || self.cardSelected)
                     return;
-/*                Draggable.create(".card-current", {
-                    type:"y",
-                    throwProps:true,
-                    onDragEnd:function() {
-                        console.log("x velocity is: " + ThrowPropsPlugin.getVelocity(this, "x") + " and the duration is " + this.tween.duration() + " seconds.");
-                    }
-                });*/
+                /*                Draggable.create(".card-current", {
+                 type:"y",
+                 throwProps:true,
+                 onDragEnd:function() {
+                 console.log("x velocity is: " + ThrowPropsPlugin.getVelocity(this, "x") + " and the duration is " + this.tween.duration() + " seconds.");
+                 }
+                 });*/
                 if (!self.cardsShown)
                 {
                     self.showCards();
@@ -190,7 +215,7 @@
             };
 
             self.showCards = function(){
-                var tm = new TimelineMax();
+                var tm = new TimelineMax({delay: 2});
                 if (self.cards.length >= 3)
                 {
                     var duration = .9;
@@ -251,7 +276,63 @@
                 self.doAnim = false;
                 self.slider(value);
                 self.tm.progress(value/100).pause();
-            }
+            };
+
+            self.playCard = function(){
+
+                if (self.cardSelected)
+                    return;
+
+                self.cardSelected = true;
+
+                var tm = new TimelineMax();
+                var color = self.cards[self.currentCard].background;
+                var color2 = self.cards[self.currentCard].background2;
+                var duration = .5;
+                var dt2 = .4;
+                tm
+                    .to('.card-current',duration,{
+                        //transform: matrix(.9, 0, 0, .9, 0, 0)
+                        scale: .9
+                        //borderRadius: 0
+                    },'test')
+                    .to('.card-current',0,{
+                        backgroundColor: 'rgba(238,66,68,0)'
+                    },'test+=0.5')
+                    .to('.home__body__central-block',0,{
+                        backgroundColor: color,
+                        opacity:1
+                    },'test+=0.5')
+                    .to('.home__body__central-block',1,{
+                        opacity: 1,
+                        backgroundColor: color2,
+                        /*                        top: 0,
+                         left: 0,*/
+                        scale: 1,
+                        borderRadius: 0
+                        /*                        width: '100vw',
+                         height: '100vh'*/
+                    },'test+=0.55')
+                    .fromTo('.central-block__card__name',dt2,{
+                        top: "-3vh"
+                    },{
+                        opacity: 1,
+                        top: 0
+                    },'tx-=0.1')
+                    .fromTo('.central-block__card__title',dt2,{
+                        top: 0
+                    },{
+                        opacity: 1,
+                        top: "3vh"
+                    },'tx-=0.1')
+                    .fromTo('.central-block__card__footer',dt2,{
+                        bottom: 0
+                    },{
+                        opacity: 1,
+                        bottom: "3vh"
+                    },'tx-=0.1');
+            };
+
         };
 
         component.view = function(ctrl){
@@ -278,10 +359,19 @@
                             m("img.icon-library[src=assets/img/ico-library-white.png]"),
                             m(".library-txt","Library")
                         ])
+                    ]),
+                    m(".home__body__central-block",{
+                        onclick: ctrl.playCard
+                    },[
+                        m(".central-block__card",[
+                            m(".central-block__card__body",[
+                                m(".central-block__card__name", ctrl.cards[ctrl.currentCard].name),
+                                m("h1.central-block__card__title", ctrl.cards[ctrl.currentCard].title2),
+                                m(".central-block__card__center", []),
+                                m(".central-block__card__footer",ctrl.cards[ctrl.currentCard].icon.data.message)
+                            ])
+                        ])
                     ])
-                    /*      m(".home__menu-icon",[
-                     m("img[src=assets/img/ico-menu-white.png]")
-                     ])*/
                 ])
             ]);
         };

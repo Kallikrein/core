@@ -14,6 +14,7 @@
 	height: 100vh;
 	text-align: center;
 	background-color: rgba(0,0,0,.25);
+	position: relative;
 }
 
 .home__body__logo {
@@ -66,8 +67,78 @@
 }
 
 .refresh-txt, .library-txt {
-    font-family: "Source Sans Pro";
-    font-size: 2.2vh;
+	font-family: "Source Sans Pro";
+	font-size: 2.2vh;
+}
+
+.home__body__central-block {
+	background-color: green;
+	position: absolute;
+	/*	height: 33vh;
+        width: 76vw;*/
+	height: 100vh;
+	width: 100vw;
+	text-align: center;
+	margin: auto;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+	/*	top: 33.5vh;
+        left: 12vw;*/
+	top: 0;
+	left: 0;
+	transform: scaleY(0.368) scaleX(.8);
+	opacity: 0;
+	border-radius: 5% / 7%;
+}
+
+.central-block__card__body {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.central-block__card {
+	width: 100%;
+	height: 100%;
+	padding: 2.8vh 2.8vh 1.7vh;
+	color: #ffffff;
+	position: relative;
+}
+.central-block__card__name {
+	opacity: 0;
+	width: 100%;
+	position: absolute;
+    font-size: 2vh;
+    font-weight: bold;
+    /*margin-bottom: 1vh;*/
+    font-family: Montserrat;
+}
+
+.central-block__card__title {
+	opacity: 0;
+	width: 100%;
+	position: absolute;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 3.4vh;
+    padding-top: 1vh;
+	top: 3vh;
+}
+
+.central-block__card__center {
+	height: 80vh;
+	line-height: 80vh;
+	text-align: center;
+}
+
+.central-block__card__footer {
+	opacity: 0;
+	width: 100%;
+	position: absolute;
+	font-size: 2.8vh;
+	font-family: Montserrat;
+	bottom: 3vh;
 }
 
 /*.card-next {
