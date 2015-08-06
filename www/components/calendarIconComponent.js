@@ -6,8 +6,7 @@
     'use strict';
 
     define([
-        'm',
-        'components/simpleIconComponent'
+        'm'
     ], function(m){
 
         var component = {};

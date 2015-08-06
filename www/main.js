@@ -18,10 +18,11 @@
 		'components/accueilComponent',
 		'components/inscription0Component',
 		'components/homepageComponent',
-		'components/cardComponent'
+		'components/cardComponent',
+		'components/contentComponent'
 	], main);
 
-	function main(m, viewport, viewportHacks, page, accueil, inscription, home, card) {
+	function main(m, viewport, viewportHacks, page, accueil, inscription, home, card, content) {
 
 		document.addEventListener('deviceready', onDeviceReady);
 
@@ -33,11 +34,12 @@
 		m.route.mode = 'hash';
 
 		m.route(document.body, '/home', {
-			'/': page,
-			'/accueil': accueil,
+			'/':            page,
+			'/accueil':     accueil,
 			'/inscription': inscription,
-			'/home': home,
-			'/card'	: card
+			'/home':        home,
+			'/card':        card,
+			'/content':     content
 		});
 
 	}
