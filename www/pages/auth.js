@@ -24,7 +24,7 @@
 
 		component.view = function(c) {
 			return m('.authPanel', [
-				m('.logo'),
+				m('.logo-brand'),
 				m('.authPanel--body.framer.framer__w300', {
 					class: 'nth' + c.panel()
 				}, c.children)

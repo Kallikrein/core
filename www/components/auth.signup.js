@@ -20,7 +20,8 @@
 				if (self.hidden())
 					self.hidden(false);
 				else {
-					// signup User
+					m.redraw.strategy('none');
+					m.route.go('signup');
 				}
 			};
 		};
@@ -45,7 +46,7 @@
 							})
 						]),
 						m('button.button.button__normal.authForm--button', {
-							config: m.touchHelper({tap: c.signup})
+							ontap: c.signup
 						}, 'Inscription')
 					])
 				]),

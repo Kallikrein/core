@@ -1,0 +1,31 @@
+.ins__btn-wrapper__txt {
+	line-height: 10vh;
+}
+
+.ins__footer {
+	width: 100vw;
+	position: absolute;
+	line-height: 10vh;
+	bottom: 7vh;
+	left: 0;
+	background-color: #ffffff;
+}
+
+.ins__btn-wrapper__inputs {
+	transform: scaleY(0);
+	transition: all .5s ease-in-out;
+}
+
+.displayInputs {
+	transform-origin: 50% 0;
+	transform: scaleY(1);
+}
+
+.ins__btn-wrapper__btn {
+	transform: translateY(-24vh);
+	transition: all .5s ease-in-out;
+}
+
+.moveButton {
+	transform: translateY(0vh);
+}

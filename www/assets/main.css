@@ -65,7 +65,7 @@ a {
 
 /* ----- AUTH ----- */
 
-.logo {
+.logo-brand {
 	width: 100%;
 	height: 20vh;
 	background: url(img/logo-sparted-black.png) no-repeat 50% 50% / 65% auto;
@@ -76,12 +76,20 @@ a {
 	transition: transform .5s ease-in-out;
 }
 
+.framer__w200 {
+	width: 200%;
+}
+
 .framer__w300 {
 	width: 300%;
 }
 
 .framer.nth1 {
 	transform: translateX(0);
+}
+
+.framer__w200.nth2 {
+	transform: translateX(-50%);
 }
 
 .framer__w300.nth2 {
@@ -96,6 +104,10 @@ a {
 	height: 100%;
 	display: inline-block;
 	position: relative;
+}
+
+.framer__w200 .framer--elem {
+	width: 50%;
 }
 
 .framer__w300 .framer--elem {

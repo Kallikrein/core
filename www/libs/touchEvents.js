@@ -55,7 +55,12 @@
 				bubbles:    true,
 				cancelable: true
 			});
+
 			eventObj.target.dispatchEvent(event);
+
+			if ({}.toString.call(eventObj.target['on' + type]).slice(8, -1) == 'Function')
+				eventObj.target['on' + type]();
+
 			console.log(type);
 
 			eventObj = {};

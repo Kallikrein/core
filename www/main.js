@@ -53,6 +53,9 @@
 		loadCss('assets/main.css');
 		loadCss('assets/fonts.css');
 		loadCss('assets/auth.css');
+		loadCss('assets/signup.css');
+		loadCss('assets/loader.css');
+		loadCss('assets/inscription0.css');
 	}
 
 	function main(
@@ -88,9 +91,12 @@
 				place:  '.m_app'
 			},
 			'signup': {
-				url:    '/signup',
-				module: 'signup',
-				place:  '.m_app'
+				url:     '/signup',
+				module:  'signup',
+				place:   '.m_app',
+				onEnter: function(elem) {
+					Animations.fromRight(elem);
+				}
 			},
 			'loader': {
 				url:    '/loader',

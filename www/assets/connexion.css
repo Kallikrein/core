@@ -1,0 +1,27 @@
+
+
+.cnx{
+	height: 100%;
+	font-size: 3.5vh;
+	width: 100vw;
+	position: relative;
+}
+
+.cnx__btn-wrapper {
+	line-height: normal;
+	width: 100vw;
+	text-align: center;
+}
+
+.cnx__btn-wrapper__txt {
+	line-height: 10vh;
+}
+.cnx__footer{
+	width: 100vw;
+	background-color: #ffffff;
+	position: absolute;
+	line-height: 6vh;
+	bottom: 9vh;
+	left: 0;
+}
+

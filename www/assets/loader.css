@@ -1,0 +1,56 @@
+.loaderPanel {
+	background: url(img/bg-homepage.jpg) no-repeat 50% 100% / 100% auto;
+	height: 100%;
+}
+
+.loaderPanel--logo {
+	position: absolute;
+	bottom: 6vh;
+	width: 80%;
+	left: 10%;
+}
+
+.loaderPanel--title {
+	font-size: 2.7vh;
+	text-transform: uppercase;
+	color: #fff;
+	position: absolute;
+	bottom: 2vh;
+	right: 0vw;
+}
+
+.loaderPanel--title::before {
+	content: "";
+	display: block;
+	height: 2px;
+	width: 15vw;
+	background-color: #fa08ab;
+	position: absolute;
+	top: 50%;
+	left: -17vw;
+	margin-top: -1px;
+}
+
+.loaderPanel--title__colored {
+	color: #fa08ab;
+}
+
+.logo {
+	width: 100%;
+	display: block;
+}
+
+.loaderPanel--progress {
+	height: 0.8vh;
+	background-color: #fa08ab;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: all ease-in 4s;
+}
+
+.loaderPanel--progress.activated {
+	transform: scaleX(1);
+}
