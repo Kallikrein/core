@@ -131,7 +131,22 @@
     position: absolute;
     right: 2vh;
     top: 2vh;
-    background-color: blue;
+    /*background-color: blue;*/
     width: 10vh;
     height: 10vh;
+}
+
+.content__top-section__counter {
+    display: inline-block;
+    position: absolute;
+    font-size: 3.125vh;
+    font-family: Montserrat;
+    color: #ffffff;
+    width: 10vh;
+    height: 10vh;
+    text-align: center;
+    line-height: 10vh;
+    top: 2vh;
+    right: 2vh;
+    opacity: 0;
 }

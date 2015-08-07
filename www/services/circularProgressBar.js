@@ -25,31 +25,39 @@
          self.ctx = self.canvas.getContext('2d');
          self.segmentObj = {seg: 0};
          self.totalSegments = 1000;
-         self.totalAmount = 6;
-         self.currentCount = 0;
 
          var percentageLoaded = 0;
 
-         self.progressUnit = 1 / self.totalAmount;
 
          self.endAnimation = false;
 
-         self.direction = direction;
+         self.direction = direction || 2;
+
+         /*
+          1: erase counter-clockwise (false + negative)
+          2: fill clockwise (false + positive)
+          3: fill counter-clockwise (true + negative)
+          4: erase clockwise (true + positive)
+          */
+
+         self.clockwise = (self.direction == 1 || self.direction == 2) ? false : true;
+         self.sign = (self.direction == 1 || self.direction == 3) ? -1 : 1;
 
          //canvas initial set up
          self.ctx.strokeStyle = color || 'rgb(0,0,200)';
          self.ctx.lineWidth = lineWidth || 5;
          self.ctx.lineCap = style || 'round';
          self.sAngle = sAngle || 0;
-         self.eAngle = eAngle || 360;
+         self.eAngle = eAngle || 359;
          self.radius = radius || 100;
 
          self.duration = duration || 1;
 
-         self.progressTl = new TimelineMax({paused: true, onUpdate: progressUpdate});
+         (new TimelineMax()).set(self.canvas,{transform: "rotate("+self.sAngle+"deg)"});
 
+         self.progressTl = new TimelineMax({paused: true, onUpdate: progressUpdate});
          self.progressTl
-             .to(self.segmentObj, self.duration, {seg: self.totalSegments,ease: Linear.easeNone,roundProps: 'seg'}, 0);
+             .to(self.segmentObj,self.duration, {seg: self.totalSegments, ease: Linear.easeNone,roundProps: 'seg'}, 'begin');
 
          function getRadians(degreesValue)
          {
@@ -57,14 +65,14 @@
             return radiansValue;
          }
 
-         function manualCircle(start, end)//the params are start angle, end angle and boolean for clokwise or counter clockwise
+         function manualCircle(start, end)
          {
             var width = self.canvas.width;
             var height = self.canvas.height;
 
             self.ctx.clearRect(0,0,height,width);//we have to clear the canvas otherwise the line looks horrible
             self.ctx.beginPath();
-            self.ctx.arc(width / 2, height / 2, self.radius, start, end, self.direction);
+            self.ctx.arc(width / 2, height / 2, self.radius, start, end, self.clockwise);
             self.ctx.stroke();
          }
 
@@ -78,27 +86,19 @@
                 endAngle = (step * (self.segmentObj.seg + 1));//the new angle for the next step in the arc
 
             //draw the new arc
-            var sAngle = getRadians(self.sAngle);
-            sAngle = self.direction == false ? sAngle : -1 * sAngle;
+            //var sAngle = getRadians(self.sAngle);
+            var sAngle = getRadians(0);
+            //sAngle = self.direction == false ? sAngle : -1 * sAngle;
             var eAngle = getRadians(endAngle);
-            eAngle = self.direction == false ? eAngle : -1 * eAngle;
-            manualCircle(sAngle, eAngle);
+            //eAngle = self.direction == false ? eAngle : -1 * eAngle;
+            manualCircle(self.sign * sAngle, self.sign * eAngle);
          }
 
-         function loadProgress()
+         function load()
          {
-            var currentProgress = self.progressUnit * ++self.currentCount;
-            TweenLite.to(self.progressTl, self.duration, {progress: currentProgress, ease: Linear.easeNone});
-
-            if (self.currentCount == self.totalAmount)
-            {
-               self.currentCount = 0;
-               self.endAnimation = true;
-            }
-
+            self.progressTl.play();
+            //TweenLite.to(self.progressTl, self.duration, {progress:currentProgress, ease:Linear.easeNone});
          }
-
-
 
          function progressUpdate()
          {
@@ -111,13 +111,8 @@
          function resetProgress()
          {
             //set the progress bar to width 0, no progress
-            self.progressTl.progress(0);
-            percentageLoaded = 0;
-            self.currentCount = 0;
-            self.endAnimation = false;
-
+            self.progressTl.progress(0).pause();
             clear();
-
          }
 
          function clear()
@@ -129,15 +124,13 @@
             self.ctx.stroke();
          }
 
-         var main = function(){
-            while (!self.endAnimation)
-               loadProgress();
-         };
-
          var service = {
-            play:  main,
-            reset: resetProgress,
-            clear: clear
+            play:        load,
+            reset:       resetProgress,
+            clear:       clear,
+            getTimeline: function(){
+               return self.progressTl;
+            }
          };
 
          return service;
